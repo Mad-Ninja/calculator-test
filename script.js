@@ -64,16 +64,15 @@ function operation(op){
     localOperationMemory = 0;
   }
   if (op === "√"){
-    display.value = round(Math.sqrt(localOperationMemory));
-       return;
-    // if (parseFloat(display.value) < 0){
-    //   display.value = "Error";
-    //   MemoryCurrentNumber = 0;
-    //   return;
-    // } else {
-    //   display.value = round(Math.sqrt(localOperationMemory));
-    //   return;
-    // };
+    
+    if (parseFloat(display.value) < 0){
+      display.value = "NaN";
+      MemoryCurrentNumber = 0;
+      return;
+    } else {
+      display.value = round(Math.sqrt(localOperationMemory));
+      return;
+    };
   };
   if (op === "xy"){
     if (NumberWillBeRaisedToPower === null){
