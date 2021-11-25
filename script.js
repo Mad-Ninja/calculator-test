@@ -64,14 +64,16 @@ function operation(op){
     localOperationMemory = 0;
   }
   if (op === "√"){
-    if (parseFloat(display.value) < 0){
-      display.value = "Error";
-      MemoryCurrentNumber = 0;
-      return;
-    } else {
-      display.value = round(Math.sqrt(localOperationMemory));
-      return;
-    };
+    display.value = round(Math.sqrt(localOperationMemory));
+       return;
+    // if (parseFloat(display.value) < 0){
+    //   display.value = "Error";
+    //   MemoryCurrentNumber = 0;
+    //   return;
+    // } else {
+    //   display.value = round(Math.sqrt(localOperationMemory));
+    //   return;
+    // };
   };
   if (op === "xy"){
     if (NumberWillBeRaisedToPower === null){
@@ -86,7 +88,7 @@ function operation(op){
     MemoryNewNumber = true;
     if (MemoryPendingOperation === "+"){
       MemoryCurrentNumber += parseFloat(localOperationMemory);
-      MemoryCurrentNumber = round(MemoryCurrentNumber);
+      //MemoryCurrentNumber = round(MemoryCurrentNumber);
     } else if (MemoryPendingOperation === "-"){
       MemoryCurrentNumber -= parseFloat(localOperationMemory);
       MemoryCurrentNumber = round(MemoryCurrentNumber);
